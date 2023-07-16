@@ -1,0 +1,48 @@
+.timeline {
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Add this to center button vertically */
+    border: 1px solid grey;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    height: 10vh;
+    padding: 10px 20px; /* Add more padding */
+  }
+  
+  .timeline-content {
+    display: flex;
+    width: 80%;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 30px;  /* Add more padding to the left */
+    padding-right: 30px; /* Add more padding to the right */
+  }
+  
+  .add-event-button {
+    height: 40px; /* Decrease height */
+    width: 40px; /* Decrease width */
+    border-radius: 50%;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .event-textarea {
+    position: absolute;
+    width: 90%;
+    height: 70vh;
+    bottom: 20%;
+    left: 5%;
+    right: 5%;
+    z-index: 999;
+  }
