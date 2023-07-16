@@ -1,0 +1,19 @@
+.div-elements {
+    min-height: 111px; 
+    width: 100px; 
+    display: inline-flex; /* Changed from inline-block to inline-flex */
+    flex-shrink: 0; /* Add this line to prevent shrinking */
+    cursor: pointer;
+    position: relative;
+    white-space: normal;
+    transition: width 0.3s ease; /* Add transition for smooth width change */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.div-elements.selected {
+    width: 200px !important; /* Instead of scaling, increase the width */
+    z-index: 1 !important; 
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5) !important;
+}

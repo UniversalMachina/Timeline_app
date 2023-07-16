@@ -5,13 +5,23 @@ class Event extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            color: this.getRandomPastelColor(),
+            color: null,  // will set in componentDidMount
+            lastHue: null, // Store last hue
         };
     }
 
-    // Generate a random pastel color
+    componentDidMount() {
+        this.setState({ color: this.getRandomPastelColor() });
+    }
+
     getRandomPastelColor = () => {
-        const hue = Math.floor(Math.random() * 360);
+        let hue;
+
+        do {
+            hue = Math.floor(Math.random() * 360);
+        } while (this.state.lastHue !== null && Math.abs(hue - this.state.lastHue) < 50); // Ensure difference of at least 50 degrees
+
+        this.setState({ lastHue: hue });
         return `hsl(${hue}, 100%, 85%)`;
     }
 
@@ -20,14 +30,9 @@ class Event extends React.Component {
         const { color } = this.state;
 
         return (
-            <div elements
+            <div className={`div-elements ${id === selectedEvent ? 'selected' : ''}`}
                 style={{ 
-                    minHeight: '111px', 
-                    width: '100px', 
-                    backgroundColor: id === selectedEvent ? color : color,
-                    display: 'inline-block', 
-                    cursor: 'pointer',
-                    position: 'relative',
+                    backgroundColor: color,
                 }}
                 onClick={() => selectEvent(id)}
             />

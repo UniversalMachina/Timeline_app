@@ -1,3 +1,4 @@
+/* Timelinecss */
 .timeline {
     position: fixed;
     bottom: 5%;
@@ -16,12 +17,26 @@
   
   .timeline-content {
     display: flex;
-    width: 80%;
+    width: 90%;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 30px;  /* Add more padding to the left */
-    padding-right: 30px; /* Add more padding to the right */
-  }
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-left: 50px;
+}
+
+.timeline-content-inner {
+    display: inline-flex; /* Keep this */
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.padding-div {
+    flex-shrink: 0;
+    width: 50px;
+}
+
+
   
   .add-event-button {
     height: 40px; /* Decrease height */
@@ -37,12 +52,15 @@
     cursor: pointer;
   }
   
-  .event-textarea {
+  .quill-wrapper {
     position: absolute;
     width: 90%;
-    height: 70vh;
     bottom: 20%;
     left: 5%;
     right: 5%;
     z-index: 999;
-  }
+}
+
+.ql-container {
+    height: 70vh; 
+}
